@@ -4,8 +4,7 @@
         "zosmf": {
             "type": "zosmf",
             "properties": {
-                "port": 10443,
-                "protocol": "https"
+                "port": 10443
             },
             "secure": []
         },
@@ -21,27 +20,50 @@
         "ssh": {
             "type": "ssh",
             "properties": {
-                "port": 22
+                "port": 2022
             },
             "secure": []
         },
-        "project_base": {
+        "endevor": {
+            "type": "endevor",
+            "properties": {
+                "port": 1000,
+                "protocol": "http",
+                "basePath": ""
+            },
+            "secure": []
+        },
+        "endevor-location": {
+            "type": "endevor-location",
+            "properties": {
+                "instance": "",
+                "environment": "",
+                "system": "",
+                "subsystem": "",
+                "type": "",
+                "stageNumber": "1",
+                "maxrc": 8
+            },
+            "secure": []
+        },
+        "base": {
             "type": "base",
             "properties": {
                 "host": "10.1.2.123",
-                "rejectUnauthorized": false
+                "rejectUnauthorized": false,
+                "user": "",
+                "password": ""
             },
-            "secure": [
-                "user",
-                "password"
-            ]
+            "secure": []
         }
     },
     "defaults": {
         "zosmf": "zosmf",
         "tso": "tso",
         "ssh": "ssh",
-        "base": "project_base"
+        "endevor": "endevor",
+        "endevor-location": "endevor-location",
+        "base": "base"
     },
     "autoStore": true
 }
